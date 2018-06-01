@@ -32,15 +32,14 @@ function playGame() {
         updateScore(2);
         displayGameResult("lose")
     }
-    updateScoreBoard();
 
     if (score[0] == 2) {
-    updateMatch(0);
-    score[0, 0, 0];
-} else if (score[2] == 2) {
-    updateMatch(1);
-    score[0, 0, 0];
-}
+        updateMatch(0);
+        score[0, 0, 0];
+    } else if (score[2] == 2) {
+        updateMatch(1);
+        score[0, 0, 0];
+    }
 
 }
 
@@ -56,6 +55,8 @@ function displayGameResult(result) {
         document.getElementById("result").textContent = message + " A tie.";
         document.getElementById("result").className = "alert alert-info";
     }
+    updateScoreBoard();
+
 }
 
 function updateScore(val) {
