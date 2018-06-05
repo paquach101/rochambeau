@@ -55,7 +55,8 @@ function displayGameResult(result) {
         document.getElementById("result").textContent = message + " A tie.";
         document.getElementById("result").className = "alert alert-info";
     }
-       updateScoreBoard();
+    updateScoreBoard();
+    updateMatch();
 
 }
 
