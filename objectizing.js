@@ -1,5 +1,5 @@
-var playerChoice;
-var computerChoice;
+var player = new Player();
+var computer = new Player();
 var choices = {
     Rock: 0,
     Paper: 1,
@@ -11,28 +11,32 @@ var score = {
     ties: 0,
 };
 
+function Player(){
+    this.choice = null;
+}
+
 function storePlayerChoice(choice) {
-    playerChoice = choice;
-    console.log("My choice = " + choice);
+    player.choice = choice;
+    console.log("My choice = " + player.choice);
     storeComputerChoice();
 }
 
 function storeComputerChoice() {
-    computerChoice = Math.floor(Math.random()*3);
-    console.log("Computer choice = " + computerChoice);
+    computer.choice = Math.floor(Math.random()*3);
+    console.log("Computer choice = " + computer.choice);
 }
 
 function playGame(){
-    if (playerChoice == computerChoice) {
+    if (player.choice == computer.choice) {
         ++score.ties;
         displayGameResult("tie")
-    } else if (playerChoice == choices.Rock && computerChoice == choices.Scissors) {
+    } else if (player.choice == choices.Rock && computer.choice == choices.Scissors) {
         ++score.wins;
         displayGameResult("win")
-    } else if (playerChoice == choices.Paper && computerChoice == choices.Rock) {
+    } else if (player.choice == choices.Paper && computer.choice == choices.Rock) {
         ++score.wins;
         displayGameResult("win")
-    } else if (playerChoice == choices.Scissors && computerChoice == choices.Paper) {
+    } else if (player.choice == choices.Scissors && computer.choice == choices.Paper) {
         ++score.wins;
         displayGameResult("win")
     } else {
